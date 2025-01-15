@@ -151,8 +151,12 @@
     }
 
     .doc-link {
-        @apply flex flex-col items-center justify-center gap-2 rounded-[22px] bg-white p-12 text-center;
+        @apply flex flex-col items-center justify-center gap-2 rounded-[22px] bg-white p-12 text-center transition-all duration-300;
         filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.05));
+
+        &:hover {
+            @apply translate-y-[-10px];
+        }
     }
 }
 
