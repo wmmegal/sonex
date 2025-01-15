@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="ru" class="scroll-smooth">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <title>Index</title>
+    </head>
+    <body class="flex min-h-screen flex-col">
+        <load ="partials/header.html" />
+        <div class="container pb-24">
+            <load ="partials/top.html" />
+            <load ="partials/breadcrumbs.html" />
+            <article class="prose mb-10 max-w-none">
+                <h1 class="mb-6 text-4xl font-bold uppercase">Контакты</h1>
+                <p>
+                    <b>ОКФС:</b> Частная собственность <br />
+                    <b>ОКОПФ:</b> Общества с ограниченной ответственностью<br />
+                    <b>ОКОГУ:</b> Организации, учрежденные юридическими лицами или гражданами,<br />
+                    или юридическими лицами и гражданами совместно<br />
+                    <b>ИНН:</b> 2369007320<br />
+                    <b>ОГРН:</b> 1192375062395 <b>КПП:</b> 236601001<br />
+                    <b>ОКАТО:</b> Краснодарский край, Сочи<br />
+                    <b>ОКПО:</b> 41363252<br />
+                    <b>ОКТМО:</b> Краснодарский край, Городские округа Краснодарского края, г Сочи
+                </p>
+                <p>
+                    <b>Адрес:</b> станица Каневская, ул. Ленина, д. 19/2 <br />
+                    <b>Телефон:</b> +7 (918) 357-77-46, +7 (918) 142-80-00 <br />
+                    <b>Время работы:</b> с 8:00 ДО 19:00
+                </p>
+            </article>
+            <div class="mb-6 text-4xl font-bold uppercase">Остались вопросы? Напишите нам!</div>
+            <form action="#">
+                <div class="mb-4">
+                    <input
+                        type="text"
+                        class="form-input w-full max-w-[619px] border-[3px] border-solid border-[#ebebeb]"
+                        placeholder="ФИО"
+                        aria-label="ФИО"
+                    />
+                </div>
+                <div class="mb-4">
+                    <input
+                        type="text"
+                        class="form-input w-full max-w-[619px] border-[3px] border-solid border-[#ebebeb]"
+                        placeholder="Ел. почта"
+                        aria-label="Ел. почта"
+                    />
+                </div>
+                <div class="mb-4">
+                    <input
+                        type="text"
+                        class="form-input w-full max-w-[619px] border-[3px] border-solid border-[#ebebeb]"
+                        placeholder="Телефон"
+                        aria-label="Телефон"
+                    />
+                </div>
+                <div class="mb-6">
+                    <textarea
+                        name=""
+                        id=""
+                        class="form-input h-[297px] w-full max-w-[733px] resize-none border-[3px] border-solid border-[#ebebeb]"
+                        aria-label="Сообщение"
+                        placeholder="Сообщение"
+                    ></textarea>
+                </div>
+                <div class="mb-4 flex items-center gap-4">
+                    <input
+                        type="checkbox"
+                        id="rule"
+                        name="rule"
+                        checked
+                        class="form-checkbox size-12 rounded-[10px] border-[3px] border-solid border-[#ebebeb] text-secondary focus:shadow-none focus:outline-0 focus:ring-0 focus:ring-offset-0"
+                    />
+                    <label for="rule" class="cursor-pointer text-xl">
+                        Согласен(а) на обработку персональных данных
+                    </label>
+                </div>
+                <div class="mb-4">
+                    <img src="img/code.jpg" alt="" width="357" height="88" />
+                </div>
+                <button type="submit" class="btn bg-grad">Отправить</button>
+            </form>
+        </div>
+        <div class="-mb-20 text-[0px]">
+            <img src="img/map.jpg" alt="" width="2006" height="600" class="w-full" />
+        </div>
+        <load ="partials/footer.html" />
+    </body>
+</html>

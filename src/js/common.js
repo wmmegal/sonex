@@ -10,18 +10,30 @@ document.addEventListener('DOMContentLoaded', () => {
     new Splide('.splide', {
         arrows: false,
     }).mount();
+});
 
-    document.addEventListener('click', (e) => {
-        if (!e.target.closest('.btn-menu')) {
-            return;
-        }
+document.addEventListener('click', (e) => {
+    if (!e.target.closest('.btn-menu')) {
+        return;
+    }
 
-        const btn = e.target.closest('.btn-menu');
+    const btn = e.target.closest('.btn-menu');
 
-        btn.classList.toggle('active');
+    btn.classList.toggle('active');
 
-        const menu = btn.nextElementSibling;
+    const menu = btn.nextElementSibling;
 
-        menu.classList.toggle('open');
-    });
+    menu.classList.toggle('open');
+});
+
+document.addEventListener('change', (e) => {
+    if (!e.target.closest('[name=rule]')) {
+        return;
+    }
+
+    const checkbox = e.target.closest('[name=rule]'),
+        form = checkbox.closest('form'),
+        btn = form.querySelector('[type=submit]');
+
+    btn.disabled = !checkbox.checked;
 });

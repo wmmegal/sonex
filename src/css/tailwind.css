@@ -18,10 +18,14 @@
 
 @layer components {
     .btn {
-        @apply inline-flex rounded-[32px] px-5 py-5 font-medium uppercase text-white lg:px-14 lg:text-xl;
+        @apply inline-flex rounded-[32px] px-8 py-5 text-sm font-medium uppercase text-white lg:px-14 lg:text-xl;
 
         &.bg-grad:hover {
             @apply bg-gradient-to-l from-[#1dcaa5] to-[#0e71b8];
+        }
+
+        &[disabled] {
+            @apply pointer-events-none opacity-50;
         }
     }
 
@@ -148,7 +152,7 @@
 
     .doc-link {
         @apply flex flex-col items-center justify-center gap-2 rounded-[22px] bg-white p-12 text-center;
-        filter: drop-shadow(0 0 10.5px rgba(0, 0, 0, 0.05));
+        filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.05));
     }
 }
 
@@ -166,6 +170,43 @@
                 @apply w-10 bg-secondary;
             }
         }
+    }
+}
+
+.pagination {
+    @apply flex items-center justify-center gap-4;
+
+    a,
+    span {
+        @apply text-base xl:text-[30px];
+
+        svg {
+            @apply h-10 w-6 text-[#2daae1] lg:h-[88px] lg:w-[50px];
+        }
+
+        &:hover {
+            @apply text-[#2daae1];
+
+            svg {
+                @apply text-primary;
+            }
+        }
+    }
+
+    span {
+        @apply size-10 rounded-full bg-[#2daae1] text-center leading-10 text-white lg:size-20 xl:leading-[80px];
+
+        &:hover {
+            @apply text-white;
+        }
+    }
+
+    .prev {
+        margin-right: 1.5rem;
+    }
+
+    .next {
+        margin-left: 1.5rem;
     }
 }
 
