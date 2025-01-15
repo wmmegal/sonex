@@ -1,39 +1,43 @@
 <header id="header">
-    <div class="container flex items-center justify-between xl:py-8">
-        <img src="img/logo.svg" width="233px" loading="lazy" alt="" />
-        <button class="relative h-[71px] w-[430px] rounded-[35px] bg-[#f4f4f4] ps-12 text-[22px] font-bold">
+    <div class="container flex flex-wrap items-center justify-center gap-4 py-4 lg:justify-between lg:gap-0 lg:py-8">
+        <img src="img/logo.svg" width="233px" class="w-[100px] lg:w-[233px]" loading="lazy" alt="" />
+        <button
+            class="btn-bvi bvi-open relative h-10 w-full rounded-[35px] bg-[#f4f4f4] px-4 font-bold lg:h-[71px] lg:w-[430px] lg:ps-12 lg:text-[22px]"
+        >
             Версия для слабовидящих
-            <span class="absolute left-[-3px] top-[-3px] size-[77px] rounded-full bg-[#2daae1] text-white">
+            <span
+                class="absolute left-[-3px] top-[-3px] hidden size-[77px] rounded-full bg-[#2daae1] text-white lg:block"
+            >
                 <svg class="icon-eyeglasses center-xy h-5 w-[55px]">
                     <use href="#icon-eyeglasses"></use>
                 </svg>
             </span>
         </button>
-        <div class="flex items-center gap-[75px]">
-            <dl class="space-y-1">
-                <dt class="text-lg font-bold">Мед.центр</dt>
-                <dd class="flex items-center gap-2">
-                    <svg class="icon-phone size-[20px] text-primary">
+        <div class="flex w-full items-center lg:w-auto lg:gap-[75px]">
+            <dl class="basis-1/2 space-y-1 lg:basis-auto">
+                <dt class="text-center text-lg font-bold lg:text-left">Мед.центр</dt>
+                <dd class="flex items-center justify-center gap-2 lg:justify-start">
+                    <svg class="icon-phone hidden size-[20px] text-primary lg:block">
                         <use href="#icon-phone"></use>
                     </svg>
                     <a href="tel:+79000000000">+7 (918) 000-00-00</a>
                 </dd>
-                <dd class="flex items-center gap-2">
+                <dd class="flex items-center justify-center gap-2 lg:justify-start">
                     <svg class="icon-time size-[20px] text-primary">
                         <use href="#icon-time"></use>
                     </svg>
                     <span>09:00 - 18:00</span>
                 </dd>
             </dl>
-            <dl class="space-y-1">
-                <dt class="text-lg font-bold">Аптека</dt>
-                <dd class="flex items-center gap-2">
-                    <svg class="icon-phone size-[20px] text-primary">
+            <dl class="basis-1/2 space-y-1 lg:basis-auto">
+                <dt class="text-center text-lg font-bold lg:text-left">Аптека</dt>
+                <dd class="flex items-center justify-center gap-2 lg:justify-start">
+                    <svg class="icon-phone hidden size-[20px] text-primary lg:block">
                         <use href="#icon-phone"></use>
                     </svg>
                     <a href="tel:+79000000000">+7 (918) 000-00-00</a>
                 </dd>
-                <dd class="flex items-center gap-2">
+                <dd class="flex items-center justify-center gap-2 lg:justify-start">
                     <svg class="icon-time size-[20px] text-primary">
                         <use href="#icon-time"></use>
                     </svg>

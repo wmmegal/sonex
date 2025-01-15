@@ -30,6 +30,8 @@
     "vite-plugin-svg-icons": "^2.0.1"
   },
   "dependencies": {
+    "@splidejs/splide": "^4.1.4",
+    "bvi": "^1.0.2",
     "fast-glob": "^3.2.12",
     "glob": "^9.3.1",
     "vite-plugin-html-inject": "^1.0.4"

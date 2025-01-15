@@ -1,4 +1,4 @@
-@import "fonts.css";
+@import 'fonts.css';
 
 @tailwind base;
 @tailwind components;
@@ -17,6 +17,14 @@
 }
 
 @layer components {
+    .btn {
+        @apply inline-flex rounded-[32px] px-5 py-5 font-medium uppercase text-white lg:px-14 lg:text-xl;
+
+        &.bg-grad:hover {
+            @apply bg-gradient-to-l from-[#1dcaa5] to-[#0e71b8];
+        }
+    }
+
     .center-y {
         @apply absolute top-1/2 -translate-y-1/2;
     }
@@ -26,19 +34,26 @@
     }
 
     .center-xy {
-        @apply absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2;
+        @apply absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2;
+    }
+
+    .bg-grad {
+        @apply bg-gradient-to-r from-[#1dcaa5] to-[#0e71b8];
     }
 
     .menu {
+        @apply invisible max-h-0 opacity-0 transition-all duration-300 lg:visible lg:max-h-none lg:opacity-100 lg:transition-none;
+
         li {
             @apply relative;
 
             a {
-                @apply py-2 block relative pl-6;
+                @apply relative block py-2 pl-6;
 
-                &:before, &:after {
+                &:before,
+                &:after {
                     content: '';
-                    @apply absolute top-0 bottom-0 bg-[#1ae789] w-[10px] hidden;
+                    @apply absolute bottom-0 top-0 hidden w-[10px] bg-[#1ae789];
                 }
 
                 &:before {
@@ -51,13 +66,15 @@
             }
 
             &:before {
-                @apply absolute left-0 top-[15px] size-[10px] bg-[#84d9ff] rounded-full;
+                @apply absolute left-0 top-[15px] size-[10px] rounded-full bg-[#84d9ff];
                 content: '';
             }
 
-            &:hover, &.active {
+            &:hover,
+            &.active {
                 a {
-                    &:before, &:after {
+                    &:before,
+                    &:after {
                         @apply block;
                     }
                 }
@@ -67,12 +84,88 @@
                 }
             }
         }
+
+        &.open {
+            @apply visible mt-6 max-h-[1000px] opacity-100;
+        }
+    }
+
+    .form-input {
+        @apply rounded-[32px] border-none px-9 py-5 text-lg;
     }
 
     .cta {
-        @apply rounded-[28px] p-7 overflow-hidden flex items-center gap-7;
-        background: url("../img/bg-slider.png") no-repeat center bottom;
+        @apply flex flex-wrap items-center gap-7 overflow-hidden rounded-[28px] p-7 lg:flex-nowrap;
+        background: url('../img/bg-slider.png') no-repeat center;
         background-size: cover;
+    }
+
+    .btn-menu {
+        @apply mt-4 flex w-full items-center justify-center lg:hidden;
+
+        .icon-burger {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: #fff;
+            position: relative;
+            transition: 0.3s all;
+
+            &:before,
+            &:after {
+                content: '';
+                position: absolute;
+                left: 0;
+                width: 24px;
+                height: 2px;
+                background: #fff;
+                transition: 0.3s all;
+            }
+
+            &:before {
+                transform: translateY(-8px);
+            }
+
+            &:after {
+                transform: translateY(8px);
+            }
+        }
+
+        &.active {
+            .icon-burger {
+                background: transparent;
+
+                &:before {
+                    transform: rotate(45deg);
+                }
+
+                &:after {
+                    transform: rotate(-45deg);
+                }
+            }
+        }
+    }
+
+    .doc-link {
+        @apply flex flex-col items-center justify-center gap-2 rounded-[22px] bg-white p-12 text-center;
+        filter: drop-shadow(0 0 10.5px rgba(0, 0, 0, 0.05));
+    }
+}
+
+.splide__pagination {
+    @apply !mt-2 gap-2;
+
+    li {
+        vertical-align: top;
+
+        button {
+            @apply size-[15px] rounded-full bg-[#72b7df] transition-all duration-300;
+            vertical-align: top;
+
+            &.is-active {
+                @apply w-10 bg-secondary;
+            }
+        }
     }
 }
 
@@ -82,6 +175,8 @@
     h3 {
         font-size: 36px;
         font-weight: bold;
+        text-transform: uppercase;
+        margin-top: 0;
     }
 
     h2,
@@ -94,16 +189,23 @@
     }
 
     ul {
-        list-style: square;
+        list-style: none;
+        padding: 0;
 
-        li::marker {
-            color: theme('colors.primary');
+        li {
+            @apply relative pl-7;
+
+            &:before {
+                content: '';
+                @apply absolute left-0 top-[8px] size-[15px] rounded-full bg-[#2daae1];
+            }
         }
     }
 
-    p, ul, ol {
+    p,
+    ul,
+    ol {
         font-size: 20px;
-        margin-top: 0;
     }
 
     ol {
@@ -112,22 +214,26 @@
         counter-set: list;
 
         li {
-            @apply relative pl-12;
+            @apply relative block pl-12;
 
             &:before {
                 counter-increment: list;
                 content: counter(list);
                 position: absolute;
                 left: 0;
-                top: 0;
-                background: theme('colors.primary');
-                width: 30px;
-                height: 30px;
+                top: -5px;
+                background: #2daae1;
+                width: 41px;
+                height: 41px;
                 color: #fff;
                 text-align: center;
                 font-size: 0.875rem;
-                line-height: 32px;
+                line-height: 41px;
                 border-radius: 50%;
+            }
+
+            & + li {
+                margin-top: 1.5rem;
             }
         }
     }
@@ -139,14 +245,35 @@
     table {
         width: 100%;
         border-collapse: separate;
-        border-spacing: 0 8px;
+        border-spacing: 0;
+        min-width: 1000px;
+        margin-top: 0;
 
         thead {
             th {
-                text-align: left;
                 font-weight: 500;
-                padding: 1.25rem 2rem;
-                background-color: #d3ddf2;
+                padding: 0.5rem 1rem;
+                background-color: #0e71b8;
+                color: #fff;
+                white-space: nowrap;
+
+                @media screen(md) {
+                    padding: 1.25rem 2rem;
+                }
+
+                &:first-child {
+                    border-radius: 22px 0 0 22px;
+                }
+
+                &:last-child {
+                    border-radius: 0 22px 22px 0;
+                }
+
+                &.bg-green {
+                    background-color: #1dc6a7;
+                    border-radius: 22px;
+                    color: #fff;
+                }
             }
         }
 
@@ -154,8 +281,30 @@
             tr {
                 td {
                     font-weight: 500;
-                    padding: 1.25rem 2rem;
-                    background-color: #f5f8ff;
+                    padding: 0.5rem 1rem;
+
+                    @media screen(md) {
+                        padding: 1.25rem 2rem;
+                    }
+                }
+
+                &:nth-child(even) {
+                    td {
+                        background-color: #e0f0fc;
+
+                        &:first-child {
+                            border-radius: 22px 0 0 22px;
+                        }
+
+                        &:last-child {
+                            border-radius: 0 22px 22px 0;
+                        }
+                    }
+                }
+
+                .bg-gray {
+                    background: #e0f0fc;
+                    border-radius: 22px;
                 }
             }
         }

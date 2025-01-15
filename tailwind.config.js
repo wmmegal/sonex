@@ -5,18 +5,19 @@ import typography from '@tailwindcss/typography';
 module.exports = {
     content: ['./src/**/*.{html,js}'],
     theme: {
+        screens: {
+            sm: '375px',
+            md: '575px',
+            lg: '1199px',
+            xl: '1464px',
+        },
         container: {
             center: true,
             padding: '15px',
-            screens: {
-                sm: '375px',
-                md: '575px',
-                lg: '1200px',
-                xl: '1464px',
-            },
         },
         colors: {
             primary: '#0e71b8',
+            secondary: '#1ae789',
             black: '#1c1c1c',
             white: '#FFFFFF',
         },
