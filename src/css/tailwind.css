@@ -100,9 +100,10 @@
     }
 
     .cta {
-        @apply flex flex-wrap items-center gap-7 overflow-hidden rounded-[28px] p-7 lg:flex-nowrap;
+        @apply overflow-hidden rounded-[28px] py-7 lg:flex-nowrap;
         background: url('../img/bg-slider.png') no-repeat center;
         background-size: cover;
+        width: 100%;
     }
 
     .btn-menu {
@@ -162,7 +163,7 @@
 }
 
 .splide__pagination {
-    @apply !mt-2 gap-2;
+    @apply !mt-7 gap-2;
 
     li {
         vertical-align: top;
