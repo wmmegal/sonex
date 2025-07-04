@@ -3,13 +3,19 @@ import '../css/tailwind.css';
 import * as isvek from 'bvi';
 import '@splidejs/splide/css/core';
 import Splide from '@splidejs/splide';
+import { Fancybox } from '@fancyapps/ui/dist/fancybox/';
+import '@fancyapps/ui/dist/fancybox/fancybox.css';
 
 document.addEventListener('DOMContentLoaded', () => {
     new isvek.Bvi();
 
-    new Splide('.splide', {
-        arrows: false,
-    }).mount();
+    const splide = document.querySelector('.splide');
+
+    if (splide) {
+        new Splide('.splide', {
+            arrows: false,
+        }).mount();
+    }
 });
 
 document.addEventListener('click', (e) => {
@@ -37,3 +43,5 @@ document.addEventListener('change', (e) => {
 
     btn.disabled = !checkbox.checked;
 });
+
+Fancybox.bind('[data-fancybox]');
